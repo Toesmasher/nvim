@@ -7,7 +7,7 @@ end
 
 local servers = {
   "clangd",                 -- C/C++
-  "jedi_language_server",   -- Python
+  "pyright",                -- Python
   "sumneko_lua"             -- LUA
 }
 
