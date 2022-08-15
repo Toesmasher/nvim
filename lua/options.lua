@@ -3,6 +3,7 @@ local h = require('helpers')
 -- Check documentation with ':help <option>', i.e. ':help cmdheight'
 local o = {
   -- Basic look
+  clipboard = 'unnamed,unnamedplus',
   cmdheight = 2,             -- Height of command window
   conceallevel = 0,          -- Don't conceal syntax stuff
   cursorline = false,        -- Highlight the line with the cursor
