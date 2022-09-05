@@ -62,7 +62,7 @@ lualine.setup({
     always_divide_middle = true,
     globalstatus = true,
     refresh = {
-      statusline = 100
+      statusline = 1000
     }
   },
   -- branch, diagnostics, diff, encoding, filetype, fileformat, location, mode, progress
