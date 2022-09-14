@@ -27,7 +27,8 @@ tsconfig.setup({
     'regex',
     'rust',
     'vim',
-    'yaml'
+    'yaml',
+    'zig'
   },
   ignore_install = {},
 
