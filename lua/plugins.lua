@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
   -- Code commentator
   use { 'numToStr/Comment.nvim' }
 
+  -- Preview markdown with glow
+  use { 'ellisonleao/glow.nvim' }
+
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter',
     run = { ':TSUpdate' },
