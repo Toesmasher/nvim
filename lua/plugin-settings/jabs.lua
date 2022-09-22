@@ -10,6 +10,11 @@ jabs.setup({
   width = 50,
   height = 20,
   border = 'rounded',
+  preview_position = 'left',
+
+  offset = {
+    bottom = 6,
+  }
 })
 
 local keys = {
