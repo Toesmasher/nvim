@@ -9,7 +9,7 @@ function M.lsp_keybinds()
     { 'n', '<Leader>nd', vim.lsp.buf.declaration },
     { 'n', '<Leader>ni', vim.lsp.buf.definition },
     { 'n', '<Leader>no', vim.lsp.buf.implementation },
-    { 'n', '<Leader>nf', vim.lsp.buf.formatting },
+    { 'n', '<Leader>nf', vim.lsp.buf.format },
     { 'n', '<Leader>nb', '<C-o>' },
 
     -- LSP Saga
