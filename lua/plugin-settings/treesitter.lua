@@ -71,7 +71,7 @@ tsconfig.setup({
 
 local h = require('helpers')
 local o = {
-  foldlevel = 3,
+  foldlevel = 5,
   foldmethod = 'expr',
   foldexpr = 'nvim_treesitter#foldexpr()',
 }
