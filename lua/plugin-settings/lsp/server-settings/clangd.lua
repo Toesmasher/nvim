@@ -9,8 +9,8 @@ capabilities.document_range_formatting = false
 -- Remove formatting capability from clangd, let NullLS handle it
 local function on_attach(client)
   common.default_attach(client)
-  client.server_capabilities.formatting = false
-  client.server_capabilities.rangeFormatting = false
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
 end
 
 return {

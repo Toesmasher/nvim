@@ -3,18 +3,16 @@ if not status_ok then
   return
 end
 
-local icons = require('icons')
-
 local status_ngps, ngps = pcall(require, 'nvim-gps')
 if status_ngps then
   ngps.setup({
     disable_icons = false,
     icons = {
-      ["class-name"] = icons.kind.Class .. ' ',
-		  ["function-name"] = icons.kind.Function .. ' ',
-		  ["method-name"] = icons.kind.Function .. ' ',
-      ["container-name"] = icons.kind.Module .. ' ',
-		  ["tag-name"] = icons.misc.Tag .. ' '
+      ['class-name'] = ' ',
+      ['function-name'] = ' ',
+      ['method-name'] = ' ',
+      ['container-name'] = ' ',
+      ['tag-name'] = ' ',
 	  },
   })
 end
@@ -52,7 +50,7 @@ local diff = {
 local branch = {
   'branch',
   icons_enabled = true,
-  icon = icons.git.Branch
+  icon = ''
 }
 
 lualine.setup({

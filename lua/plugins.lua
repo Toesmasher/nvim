@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
   --LSP
   use { 'neovim/nvim-lspconfig' }
   use { 'tami5/lspsaga.nvim' }
+  use { 'onsails/lspkind.nvim' }
 
   -- Autocomplete with LSP and luasnip
   use { 'hrsh7th/nvim-cmp',

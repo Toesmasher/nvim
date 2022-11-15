@@ -1,11 +1,17 @@
-local icons = require('icons')
-
 local status_ok, cmp = pcall(require, 'cmp')
 if not status_ok then
   return
 end
 
-local _, luasnip = pcall(require, 'luasnip')
+local status_ok2, luasnip = pcall(require, 'luasnip')
+if not status_ok2 then
+  return
+end
+
+local status_ok3, lspkind = pcall(require, 'lspkind')
+if not status_ok3 then
+  return
+end
 
 cmp.setup({
   window = {
@@ -41,15 +47,15 @@ cmp.setup({
     { name = 'luasnip' },
   },
   formatting = {
-    format = function(entry, item)
-      item.kind = icons.kind[item.kind]
-      item.menu = ({
-        nvim_lsp = "[LSP]",
-        path =     "[Path]",
-        luasnip =  "[Snippet]",
-      })[entry.source.name]
+     format = lspkind.cmp_format({
+      mode = 'symbol',
+      maxwidth = 50,
+      ellipsis_char = '...',
 
-      return item
-    end,
+      before = function(entry, vim_item)
+        -- Modify here
+        return vim_item
+      end
+    })
   },
 })
