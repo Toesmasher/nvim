@@ -9,7 +9,7 @@ local servers = {
   "clangd",                 -- C/C++
   "jedi_language_server",   -- Python
   "rust_analyzer",          -- Rust
-  "sumneko_lua"             -- LUA
+  "lua_ls"                  -- LUA
 }
 
 local default_setup = {
