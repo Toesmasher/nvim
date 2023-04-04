@@ -9,5 +9,6 @@ bufferline.setup({
     max_name_length = 30,
     max_prefix_length = 30,
     diagnostics = false,
+    show_buffer_close_icons = false
   }
 })
