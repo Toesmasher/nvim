@@ -3,36 +3,22 @@ if not status_ok then
   return
 end
 
-local status_ngps, ngps = pcall(require, 'nvim-gps')
-if status_ngps then
-  ngps.setup({
-    disable_icons = false,
-    icons = {
-      ['class-name'] = ' ',
-      ['function-name'] = ' ',
-      ['method-name'] = ' ',
-      ['container-name'] = ' ',
-      ['tag-name'] = ' ',
-	  },
-  })
-end
-
-
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 
 local function location()
-  local loc = { cond = false }
+--[[   local loc = { cond = false }
 
-  if status_ngps then
+  if status_navic then
     loc = {
-      ngps.get_location,
-      cond = ngps.is_available
+      navic.get_location,
+      cond = navic.is_available
     }
   end
 
   return loc
+]]
 end
 
 local diagnostics = {
@@ -67,7 +53,7 @@ lualine.setup({
   sections = {
     lualine_a = { branch },
     lualine_b = { 'diff' },
-    lualine_c = { {'filename', path = 1}, location() },
+    lualine_c = { { 'filename', path = 1 }, location() },
     lualine_x = { 'encoding' },
     lualine_y = { diagnostics, 'filetype' },
     lualine_z = { 'location', 'progress' },
