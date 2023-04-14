@@ -5,7 +5,7 @@ end
 
 c.setup(
   {
-  '*';
+    '*',
   },
   {
     names = false

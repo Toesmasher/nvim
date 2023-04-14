@@ -31,7 +31,6 @@ tsconfig.setup({
     'zig'
   },
   ignore_install = {},
-
   highlight = { enable = true },
   indent = { enable = true },
   incremental_selection = {
@@ -43,25 +42,19 @@ tsconfig.setup({
       scope_incremental = 's',
     }
   },
-
   -- nvim-treesitter-textobjects specific stuff
   textobjects = {
     select = {
       enable = true,
-
       -- Automatically jump forward to textobj
       lookahead = true,
-
       keymaps = {
         ['af'] = '@function.outer',
         ['if'] = '@function.inner',
-
         ['ib'] = '@block.inner',
         ['ab'] = '@block.outer',
-
         ['ic'] = '@conditional.inner',
         ['ac'] = '@conditional.outer',
-
         ['il'] = '@loop.inner',
         ['al'] = '@loop.outer',
       }

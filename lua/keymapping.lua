@@ -9,11 +9,11 @@ h.set_globals(g)
 -- Modes: 'n'ormal, 'i'nsert, 'v'isual, 'x'visual_block, 't'erm, 'c'ommand
 local n_keys = {
   -- Set space as leader
-  { '', '<Space>', '<Nop>' },
+  { '',  '<Space>',    '<Nop>' },
 
   -- No prefix bindings
   -- Buffer handling
-  { 'n', '<Leader>c', ':Bdelete<CR>' },
+  { 'n', '<Leader>c',  ':Bdelete<CR>' },
 
   -- Prefixed bindings
   -- Splitting, Prefix: <Leader>s

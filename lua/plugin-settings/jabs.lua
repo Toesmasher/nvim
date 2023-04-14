@@ -11,7 +11,6 @@ jabs.setup({
   height = 20,
   border = 'rounded',
   preview_position = 'left',
-
   offset = {
     bottom = 6,
   }

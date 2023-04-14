@@ -7,20 +7,6 @@ local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 
-local function location()
---[[   local loc = { cond = false }
-
-  if status_navic then
-    loc = {
-      navic.get_location,
-      cond = navic.is_available
-    }
-  end
-
-  return loc
-]]
-end
-
 local diagnostics = {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
@@ -53,7 +39,7 @@ lualine.setup({
   sections = {
     lualine_a = { branch },
     lualine_b = { 'diff' },
-    lualine_c = { { 'filename', path = 1 }, location() },
+    lualine_c = { { 'filename', path = 1 } },
     lualine_x = { 'encoding' },
     lualine_y = { diagnostics, 'filetype' },
     lualine_z = { 'location', 'progress' },

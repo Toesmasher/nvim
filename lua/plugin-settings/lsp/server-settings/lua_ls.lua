@@ -6,7 +6,6 @@ table.insert(libs, vim.fn.expand('$VIMRUNTIME/lua'))
 
 return {
   on_attach = common.default_attach,
-
   settings = {
     Lua = {
       diagnostics = {

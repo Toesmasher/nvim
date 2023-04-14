@@ -11,4 +11,3 @@ local keys = {
   { 'n', '<Leader>w', ':HopWord<CR>' },
 }
 h.map_keys(keys)
-

@@ -6,10 +6,10 @@ if not status_ok then
 end
 
 local servers = {
-  "clangd",                 -- C/C++
-  "jedi_language_server",   -- Python
-  "rust_analyzer",          -- Rust
-  "lua_ls"                  -- LUA
+  "clangd",               -- C/C++
+  "jedi_language_server", -- Python
+  "rust_analyzer",        -- Rust
+  "lua_ls"                -- LUA
 }
 
 local default_setup = {
@@ -17,10 +17,10 @@ local default_setup = {
 }
 
 for _, server in ipairs(servers) do
-    local cfg_ok, cfg = pcall(require, 'plugin-settings.lsp.server-settings.' .. server)
-    if not cfg_ok then
-      cfg = default_setup
-    end
+  local cfg_ok, cfg = pcall(require, 'plugin-settings.lsp.server-settings.' .. server)
+  if not cfg_ok then
+    cfg = default_setup
+  end
 
-    lspconfig[server].setup(cfg)
+  lspconfig[server].setup(cfg)
 end

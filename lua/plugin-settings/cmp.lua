@@ -23,7 +23,6 @@ cmp.setup({
       border = 'rounded',
       winhighlight = 'Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None'
     },
-
   },
   snippet = {
     expand = function(args)
@@ -48,11 +47,10 @@ cmp.setup({
     { name = 'luasnip' },
   },
   formatting = {
-     format = lspkind.cmp_format({
+    format = lspkind.cmp_format({
       mode = 'symbol',
       maxwidth = 50,
       ellipsis_char = '...',
-
       before = function(entry, vim_item)
         -- Modify here
         return vim_item
