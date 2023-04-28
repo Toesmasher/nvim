@@ -1,8 +1,8 @@
-require('plugins')
-
 require('autocmds')
 require('keymapping')
 require('options')
+
+require('plugins')
 
 require('plugin-settings.bufferline')
 require('plugin-settings.cmp')

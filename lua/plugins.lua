@@ -1,107 +1,110 @@
-local fn = vim.fn
-
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-    install_path })
-  vim.cmd('packadd packer.nvim')
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local status_ok, packer = pcall(require, 'packer')
+local status_ok, lazy = pcall(require, 'lazy')
 if not status_ok then
   return
 end
 
 -- Install here
-return require('packer').startup(function(use)
-  -- Let packer manage itself, have it depend on some common stuff
-  use { 'wbthomason/packer.nvim',
-    requires = {
-      { 'nvim-lua/popup.nvim' },
-      { 'nvim-lua/plenary.nvim' },
-      { 'kyazdani42/nvim-web-devicons' }
-    }
-  }
+return require('lazy').setup({
+  -- Common dependencies
+  'nvim-lua/popup.nvim',
+  'nvim-lua/plenary.nvim',
+  'kyazdani42/nvim-web-devicons',
 
   -- Colorschemes
-  use { 'ellisonleao/gruvbox.nvim' }
-  use { 'catppuccin/nvim', as = 'catppucin' }
+  'ellisonleao/gruvbox.nvim',
+  {
+    'catppuccin/nvim',
+    as = 'catppucin'
+  },
 
   -- Navigation
-  use { 'phaazon/hop.nvim' }
+  'phaazon/hop.nvim',
 
   -- Notifications
-  use { 'rcarriga/nvim-notify' }
+  'rcarriga/nvim-notify',
 
   -- Buffer closer
-  use { 'moll/vim-bbye' }
+  'moll/vim-bbye',
 
   -- Buffer selector
-  use { 'matbme/JABS.nvim' }
+  'matbme/JABS.nvim',
 
   -- File explorer
-  use { 'kyazdani42/nvim-tree.lua' }
+  'kyazdani42/nvim-tree.lua',
 
   -- Project management
-  use { 'ahmedkhalf/project.nvim' }
+  'ahmedkhalf/project.nvim',
 
   -- Bufferline
-  use { 'akinsho/bufferline.nvim' }
+  'akinsho/bufferline.nvim',
 
   -- Lualine
-  use { 'nvim-lualine/lualine.nvim' }
+  'nvim-lualine/lualine.nvim',
 
   --Telescope
-  use { 'nvim-telescope/telescope.nvim' }
+  'nvim-telescope/telescope.nvim',
 
   -- GIT handler
-  use { 'lewis6991/gitsigns.nvim' }
+  'lewis6991/gitsigns.nvim',
 
   -- Color highlighter
-  use { 'norcalli/nvim-colorizer.lua' }
+  'norcalli/nvim-colorizer.lua',
 
   -- Code commentator
-  use { 'numToStr/Comment.nvim' }
+  'numToStr/Comment.nvim',
 
   -- Preview markdown with glow
-  use { 'ellisonleao/glow.nvim' }
+  'ellisonleao/glow.nvim',
 
   -- Treesitter
-  use { 'nvim-treesitter/nvim-treesitter',
-    run = { ':TSUpdate' },
-    requires = {
-      { 'nvim-treesitter/nvim-treesitter-textobjects' },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = { ':TSUpdate' },
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
-  }
+  },
 
   --LSP
-  use { 'neovim/nvim-lspconfig' }
-  use { 'tami5/lspsaga.nvim' }
-  use { 'onsails/lspkind.nvim' }
+  'neovim/nvim-lspconfig',           -- Easier LSP config
+  'tami5/lspsaga.nvim',
+  'onsails/lspkind.nvim',            -- LSP icons
+  'jose-elias-alvarez/null-ls.nvim', -- Misc. extras
+  'toesmasher/toelsp.nvim',
 
   -- Autocomplete with LSP and luasnip
-  use { 'hrsh7th/nvim-cmp',
-    requires = {
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
-      { 'hrsh7th/cmp-path' },
-      { 'hrsh7th/cmp-buffer' },
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
 
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'l3mon4d3/luasnip' },
+      'saadparwaiz1/cmp_luasnip',
+      'l3mon4d3/luasnip',
     }
-  }
-  use { 'jose-elias-alvarez/null-ls.nvim' } -- Null LS for extras
+  },
 
-  use { 'smiteshp/nvim-navbuddy',
-    requires = {
-      { 'neovim/nvim-lspconfig' },
-      { 'smiteshp/nvim-navic' },
-      { 'muniftanjim/nui.nvim' }
+  {
+    'smiteshp/nvim-navbuddy',
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      'smiteshp/nvim-navic',
+      'muniftanjim/nui.nvim',
     }
-  }
-
-  if PACKER_BOOTSTRAP then
-    packer.sync()
-  end
-end)
+  },
+})
