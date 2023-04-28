@@ -27,8 +27,16 @@ local branch = {
 
 lualine.setup({
   options = {
+    component_separators = {
+      left = "",
+      right = ""
+    },
+    section_separators = {
+      left = "",
+      right = ""
+    },
     icons_enabled = true,
-    theme = 'gruvbox',
+    theme = 'catppuccin',
     always_divide_middle = true,
     globalstatus = true,
     refresh = {

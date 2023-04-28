@@ -23,14 +23,15 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- Colorschemes
+  use { 'ellisonleao/gruvbox.nvim' }
+  use { 'catppuccin/nvim', as = 'catppucin' }
+
   -- Navigation
   use { 'phaazon/hop.nvim' }
 
   -- Notifications
   use { 'rcarriga/nvim-notify' }
-
-  -- Colorschemes
-  use { 'ellisonleao/gruvbox.nvim' }
 
   -- Buffer closer
   use { 'moll/vim-bbye' }
