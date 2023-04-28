@@ -11,13 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
+local h = require('helpers')
 local status_ok, lazy = pcall(require, 'lazy')
 if not status_ok then
   return
 end
 
 -- Install here
-return require('lazy').setup({
+lazy.setup({
   -- Common dependencies
   'nvim-lua/popup.nvim',
   'nvim-lua/plenary.nvim',
@@ -43,7 +45,12 @@ return require('lazy').setup({
   'matbme/JABS.nvim',
 
   -- File explorer
-  'kyazdani42/nvim-tree.lua',
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    dependencies = {
+      'muniftanjim/nui.nvim'
+    }
+  },
 
   -- Project management
   'ahmedkhalf/project.nvim',
@@ -108,3 +115,5 @@ return require('lazy').setup({
     }
   },
 })
+
+lazy.sync()
