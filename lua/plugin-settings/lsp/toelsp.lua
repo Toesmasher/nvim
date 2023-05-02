@@ -8,13 +8,12 @@ local h = require('helpers')
 toelsp.setup({
   debug = true,
   simple_popup = {
-    position = 'cursor'
+    position = 'default'
   }
 })
 
 h.create_autocmds('toelspp', {
   {
-    { 'CursorHold' },
-    { callback = toelsp.requests.hover }
+    { 'CursorHold' }, { callback = toelsp.requests.hover }
   }
 })

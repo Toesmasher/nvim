@@ -29,7 +29,7 @@ lazy.setup({
   'ellisonleao/gruvbox.nvim',
   {
     'catppuccin/nvim',
-    as = 'catppucin'
+    name = 'catppucin'
   },
 
   -- Navigation
@@ -90,7 +90,9 @@ lazy.setup({
   'tami5/lspsaga.nvim',
   'onsails/lspkind.nvim',            -- LSP icons
   'jose-elias-alvarez/null-ls.nvim', -- Misc. extras
-  'toesmasher/toelsp.nvim',
+  {
+    dir = "~/Projects/toelsp.nvim"
+  },
 
   -- Autocomplete with LSP and luasnip
   {
@@ -116,4 +118,4 @@ lazy.setup({
   },
 })
 
-lazy.sync()
+--lazy.sync()
