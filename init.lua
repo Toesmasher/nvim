@@ -16,7 +16,6 @@ require('plugin-settings.lualine')
 require('plugin-settings.navbuddy')
 require('plugin-settings.nvim-notify')
 require('plugin-settings.neo-tree')
-require('plugin-settings.project')
 require('plugin-settings.telescope')
 require('plugin-settings.treesitter')
 
