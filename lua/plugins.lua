@@ -52,9 +52,6 @@ lazy.setup({
     }
   },
 
-  -- Project management
-  'ahmedkhalf/project.nvim',
-
   -- Bufferline
   'akinsho/bufferline.nvim',
 
