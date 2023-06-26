@@ -1,5 +1,12 @@
 local h = require('helpers')
 
+local function highlightyank()
+  vim.highlight.on_yank({
+    higroup = 'IncSearch',
+    timeout = 200
+  })
+end
+
 local cmds = {
   -- Reload config files on write
   { 'BufWritePost', { pattern = '*/nvim/*.lua', command = 'source <afile>' } },
@@ -11,5 +18,7 @@ local cmds = {
   -- TODO: Figure out how to do setlocal in LUA
   { 'FileType',     { pattern = { 'gitcommit', 'markdown' }, command = 'setlocal spell' } },
   { 'FileType',     { pattern = { 'markdown' }, command = 'setlocal textwidth=100' } },
+
+  { 'TextYankPost', { callback = highlightyank } },
 }
 h.create_autocmds('ToeAutoCmds', cmds)
