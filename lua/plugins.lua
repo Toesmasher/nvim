@@ -26,14 +26,10 @@ lazy.setup({
   'kyazdani42/nvim-web-devicons',
 
   -- Colorschemes
-  'ellisonleao/gruvbox.nvim',
   {
     'catppuccin/nvim',
     name = 'catppucin'
   },
-
-  -- Navigation
-  'phaazon/hop.nvim',
 
   -- Notifications
   'rcarriga/nvim-notify',
@@ -43,6 +39,9 @@ lazy.setup({
 
   -- Buffer selector
   'matbme/JABS.nvim',
+
+  -- File nav
+  'ThePrimeagen/harpoon',
 
   -- File explorer
   {
@@ -104,15 +103,4 @@ lazy.setup({
       'l3mon4d3/luasnip',
     }
   },
-
-  {
-    'smiteshp/nvim-navbuddy',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'smiteshp/nvim-navic',
-      'muniftanjim/nui.nvim',
-    }
-  },
 })
-
---lazy.sync()

@@ -14,7 +14,8 @@ local n_keys = {
   -- No prefix bindings
   -- Buffer handling
   { 'n', '<Leader>c',  ':Bdelete<CR>' },
-
+  { 'n', '<Tab>', ':bNext<CR>' },
+  { 'n', '<S-Tab>', ':bPrev<CR>' },
   -- Prefixed bindings
   -- Splitting, Prefix: <Leader>s
   { '',  's',          '<nop>' },
