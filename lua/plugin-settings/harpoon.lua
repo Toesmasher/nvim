@@ -20,7 +20,7 @@ harpoon.setup({
 })
 
 local keys = {
-  { 'n', '<Leader>ha', mark.add_file },
-  { 'n', '<Leader>hn', ui.toggle_quick_menu },
+  { 'n', '<Leader>fa', mark.add_file },
+  { 'n', '<Leader>fn', ui.toggle_quick_menu },
 }
 h.map_keys(keys)
