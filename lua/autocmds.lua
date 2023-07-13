@@ -18,6 +18,7 @@ local cmds = {
   -- TODO: Figure out how to do setlocal in LUA
   { 'FileType',     { pattern = { 'gitcommit', 'markdown' }, command = 'setlocal spell' } },
   { 'FileType',     { pattern = { 'markdown' }, command = 'setlocal textwidth=100' } },
+  { 'FileType',     { pattern = { 'markdown' }, command = 'setlocal formatexpr=' } },
 
   { 'TextYankPost', { callback = highlightyank } },
 }

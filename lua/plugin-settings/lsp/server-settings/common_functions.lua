@@ -2,6 +2,17 @@ local h = require('helpers')
 
 local M = {}
 
+local diag_vtext = false
+local function toggle_diagnostics()
+  diag_vtext = not diag_vtext
+  vim.diagnostic.config({
+    virtual_text = diag_vtext,
+    underline = true,
+    severity_sort = true,
+    update_in_insert = false,
+  })
+end
+
 -- Default keybindings
 function M.lsp_keybinds()
   local keys = {
@@ -11,6 +22,9 @@ function M.lsp_keybinds()
     { 'n', '<Leader>no', vim.lsp.buf.implementation },
     { 'n', '<Leader>nf', vim.lsp.buf.format },
     { 'n', '<Leader>nb', '<C-o>' },
+
+    -- Diagnostics
+    { 'n', '<Leader>nv', toggle_diagnostics },
 
     -- LSP Saga
     { 'n', '<Leader>ni', ':Lspsaga goto_definition<CR>' },
@@ -34,13 +48,7 @@ function M.default_attach(client)
   M.lsp_keybinds()
   M.lsp_autocmd()
 
-  -- Disable diagnostic virtual text.
-  vim.diagnostic.config({
-    virtual_text = true,
-    underline = true,
-    severity_sort = true,
-    update_in_insert = false,
-  })
+  toggle_diagnostics()
 end
 
 return M
