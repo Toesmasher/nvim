@@ -31,7 +31,7 @@ function M.lsp_keybinds()
     { 'n', '<Leader>na', ':Lspsaga code_action<CR>' },
     { 'n', '<Leader>nc', ':Lspsaga hover_doc<CR>' },
     { 'n', '<Leader>nx', ':Lspsaga rename<CR>' },
-    { 'n', '<Leader>nr', ':Lspsaga lsp_finder<CR>' },
+    { 'n', '<Leader>nr', ':Lspsaga finder<CR>' },
   }
   h.map_keys(keys)
 end
