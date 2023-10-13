@@ -6,7 +6,7 @@ end
 vim.g.catppuccin_flavour = "macchiato"
 
 gb.setup({
-  transparent_background = false,
+  transparent_background = true,
   compile = {
     enabled = false
   },
