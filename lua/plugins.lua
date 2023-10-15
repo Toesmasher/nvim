@@ -37,9 +37,6 @@ lazy.setup({
   -- Buffer closer
   'moll/vim-bbye',
 
-  -- Buffer selector
-  'matbme/JABS.nvim',
-
   -- File nav
   'ThePrimeagen/harpoon',
 
@@ -51,10 +48,7 @@ lazy.setup({
     }
   },
 
-  -- Bufferline
-  'akinsho/bufferline.nvim',
-
-  -- Lualine
+  -- Lualine for status and bufferlines
   'nvim-lualine/lualine.nvim',
 
   --Telescope
@@ -86,9 +80,6 @@ lazy.setup({
   'nvimdev/lspsaga.nvim',
   'onsails/lspkind.nvim',            -- LSP icons
   'jose-elias-alvarez/null-ls.nvim', -- Misc. extras
-  {
-    dir = "~/Projects/toelsp.nvim"
-  },
 
   -- Autocomplete with LSP and luasnip
   {

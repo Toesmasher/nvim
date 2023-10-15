@@ -4,7 +4,6 @@ require('options')
 
 require('plugins')
 
-require('plugin-settings.bufferline')
 require('plugin-settings.cmp')
 require('plugin-settings.colorizer')
 require('plugin-settings.comment')
@@ -20,6 +19,5 @@ require('plugin-settings.treesitter')
 require('plugin-settings.lsp.lspconfig')
 require('plugin-settings.lsp.lspsaga')
 require('plugin-settings.lsp.null-ls')
---require('plugin-settings.lsp.toelsp')
 
 require('plugin-settings.colors.catppuccin')

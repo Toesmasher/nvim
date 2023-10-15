@@ -47,11 +47,32 @@ lualine.setup({
   sections = {
     lualine_a = { branch },
     lualine_b = { 'diff' },
-    lualine_c = { { 'filename', path = 1 } },
+    lualine_c = {
+      {
+        'filename',
+        path = 1
+      }
+    },
     lualine_x = { 'encoding' },
     lualine_y = { diagnostics, 'filetype' },
     lualine_z = { 'location', 'progress' },
   },
-  tabline = {},
-  extensions = {}
+
+  tabline = {
+    lualine_a = {
+      {
+        'buffers',
+        use_mode_colors = true,
+        symbols = { alternate_file = '' }
+      }
+    }
+  },
+
+  winbar = {
+
+  },
+
+  extensions = {
+
+  }
 })
