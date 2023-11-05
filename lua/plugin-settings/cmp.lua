@@ -32,8 +32,12 @@ cmp.setup({
     end,
   },
   mapping = {
-    ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Replace }),
-    ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Replace })
+    ['<Tab>'] = cmp.mapping(function()
+      cmp.select_next_item({ behavior = cmp.SelectBehavior.Replace })
+    end),
+    ['<S-Tab>'] = cmp.mapping(function()
+      cmp.select_next_item({ behavior = cmp.SelectBehavior.Replace })
+    end)
   },
   sources = {
     { name = 'nvim_lsp' },
