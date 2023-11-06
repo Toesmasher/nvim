@@ -32,11 +32,19 @@ cmp.setup({
     end,
   },
   mapping = {
-    ['<Tab>'] = cmp.mapping(function()
-      cmp.select_next_item({ behavior = cmp.SelectBehavior.Replace })
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if (cmp.visible()) then
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Replace })
+      else
+        fallback()
+      end
     end),
-    ['<S-Tab>'] = cmp.mapping(function()
-      cmp.select_next_item({ behavior = cmp.SelectBehavior.Replace })
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if (cmp.visible()) then
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Replace })
+      else
+        fallback()
+      end
     end)
   },
   sources = {
