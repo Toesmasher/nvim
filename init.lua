@@ -13,6 +13,7 @@ require('plugin-settings.harpoon')
 require('plugin-settings.lualine')
 require('plugin-settings.nvim-notify')
 require('plugin-settings.neo-tree')
+require('plugin-settings.noice')
 require('plugin-settings.telescope')
 require('plugin-settings.treesitter')
 

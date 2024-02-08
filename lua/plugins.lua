@@ -31,6 +31,9 @@ lazy.setup({
     name = 'catppucin'
   },
 
+  -- Main UI
+  'folke/noice.nvim',
+
   -- Notifications
   'rcarriga/nvim-notify',
 
