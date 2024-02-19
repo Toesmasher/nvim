@@ -6,7 +6,7 @@ end
 noice.setup({
   cmdline = {
     enabled = true,
-    view = "cmdline",
+    view = "cmdline_popup",
     opts = {},
 
     format = {
@@ -109,7 +109,7 @@ noice.setup({
     },
 
     signature = {
-      enabled = true,
+      enabled = false,
       auto_open = {
         enabled = true,
         trigger = true,

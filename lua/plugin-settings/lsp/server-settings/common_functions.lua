@@ -26,10 +26,12 @@ function M.lsp_keybinds()
     -- Diagnostics
     { 'n', '<Leader>nv', toggle_diagnostics },
 
+    -- Noice
+    { 'n', '<Leader>nc', vim.lsp.buf.hover },
+
     -- LSP Saga
     { 'n', '<Leader>ni', ':Lspsaga goto_definition<CR>' },
     { 'n', '<Leader>na', ':Lspsaga code_action<CR>' },
-    { 'n', '<Leader>nc', ':Lspsaga hover_doc<CR>' },
     { 'n', '<Leader>nx', ':Lspsaga rename<CR>' },
     { 'n', '<Leader>nr', ':Lspsaga finder<CR>' },
   }

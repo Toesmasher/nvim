@@ -4,8 +4,10 @@ if not status_ok then
 end
 
 tsconfig.setup({
+  auto_install = false,
   sync_install = false,
   -- ensure_installed = 'maintained',
+
   ensure_installed = {
     'bash',
     'c',
@@ -31,9 +33,10 @@ tsconfig.setup({
     'yaml',
     'zig'
   },
+
   ignore_install = {},
   highlight = { enable = true },
-  indent = { enable = true },
+  indent = { enable = false },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -43,6 +46,7 @@ tsconfig.setup({
       scope_incremental = 's',
     }
   },
+
   -- nvim-treesitter-textobjects specific stuff
   textobjects = {
     select = {
