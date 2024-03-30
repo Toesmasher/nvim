@@ -33,25 +33,34 @@ cmp.setup({
   },
   mapping = {
     ['<Tab>'] = cmp.mapping(function(fallback)
-      if (cmp.visible()) then
-        cmp.select_next_item({ behavior = cmp.SelectBehavior.Replace })
+      if cmp.visible() then
+        if #cmp.get_entries() == 1 then
+          cmp.confirm({ select = true })
+        else
+          cmp.select_next_item()
+        end
       else
         fallback()
       end
-    end),
+    end, { "i", "s" }),
+
     ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if (cmp.visible()) then
-        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Replace })
+      if cmp.visible() then
+        if #cmp.get_entries() == 1 then
+          cmp.confirm({ select = true })
+        else
+          cmp.select_prev_item()
+        end
       else
         fallback()
       end
-    end)
+    end, { "i", "s" }),
   },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'path' },
-    { name = 'buffer' },
+    -- { name = 'buffer' },
     { name = 'luasnip' },
   },
   formatting = {
