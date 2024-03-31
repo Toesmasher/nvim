@@ -24,6 +24,7 @@ cmp.setup({
       winhighlight = 'Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None'
     },
   },
+
   snippet = {
     expand = function(args)
       if luasnip then
@@ -31,6 +32,9 @@ cmp.setup({
       end
     end,
   },
+
+  preselect = cmp.PreselectMode.None,
+
   mapping = {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -56,6 +60,7 @@ cmp.setup({
       end
     end, { "i", "s" }),
   },
+
   sources = {
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
@@ -63,6 +68,7 @@ cmp.setup({
     -- { name = 'buffer' },
     { name = 'luasnip' },
   },
+
   formatting = {
     format = lspkind.cmp_format({
       mode = 'symbol',
