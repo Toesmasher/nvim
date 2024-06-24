@@ -7,6 +7,7 @@ end
 
 local servers = {
   "clangd",               -- C/C++
+  "jdtls",                -- Java
   "jedi_language_server", -- Python
   "rust_analyzer",        -- Rust
   "lua_ls"                -- LUA

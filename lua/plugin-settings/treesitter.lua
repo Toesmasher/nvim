@@ -20,7 +20,7 @@ tsconfig.setup({
     'javascript',
     'json',
     'json5',
-    'latex',
+    -- 'latex',
     'llvm',
     'lua',
     'make',
