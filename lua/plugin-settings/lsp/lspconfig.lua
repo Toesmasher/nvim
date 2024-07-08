@@ -5,6 +5,8 @@ if not status_ok then
   return
 end
 
+require('plugin-settings.lsp.server-settings.none-ls')
+
 local servers = {
   "clangd",               -- C/C++
   "jdtls",                -- Java
