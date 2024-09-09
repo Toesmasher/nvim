@@ -10,6 +10,6 @@ nt.setup({
 })
 
 local keys = {
-  { 'n', '<Leader>f', ':NeoTreeShowToggle<CR>' },
+  { 'n', '<Leader>f', ':Neotree toggle<CR>' },
 }
 h.map_keys(keys)
