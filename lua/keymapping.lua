@@ -1,39 +1,44 @@
-local h = require('helpers')
+local h = require("helpers")
 
 local g = {
-  mapleader = ' ',
-  maplocalleader = ' ',
+  mapleader = " ",
+  maplocalleader = " ",
 }
 h.set_globals(g)
 
--- Modes: 'n'ormal, 'i'nsert, 'v'isual, 'x'visual_block, 't'erm, 'c'ommand
+-- Modes: "n"ormal, "i"nsert, "v"isual, "x"visual_block, "t"erm, "c"ommand
 local n_keys = {
   -- Set space as leader
-  { '',  '<Space>',    '<Nop>' },
+  { "",  "<Space>",    "<Nop>" },
 
   -- No prefix bindings
   -- Buffer handling
-  { 'n', '<Leader>c',  ':Bdelete<CR>' },
-  { 'n', '<Tab>',      ':bnext<CR>' },
-  { 'n', '<S-Tab>',    ':bprevious<CR>' },
+  { "n", "<Leader>c",  ":Bdelete<CR>" },
+  { "n", "<Tab>",      ":bnext<CR>" },
+  { "n", "<S-Tab>",    ":bprevious<CR>" },
+
   -- Prefixed bindings
   -- Splitting, Prefix: <Leader>s
-  { '',  's',          '<nop>' },
-  { 'n', '<Leader>ss', ':split<CR>' },
-  { 'n', '<Leader>sv', ':vsplit<CR>' },
-  { 'n', '<Leader>se', ':wincmd =<CR>' },
+  { "",  "s",          "<nop>" },
+  { "n", "<Leader>ss", ":split<CR>" },
+  { "n", "<Leader>sv", ":vsplit<CR>" },
+  { "n", "<Leader>se", ":wincmd =<CR>" },
 
   -- Window selection
-  { 'n', '<Leader>h',  ':wincmd h<CR>' }, -- Left
-  { 'n', '<Leader>j',  ':wincmd j<CR>' }, -- Down
-  { 'n', '<Leader>k',  ':wincmd k<CR>' }, -- Up
-  { 'n', '<Leader>l',  ':wincmd l<CR>' }, -- Right
+  { "n", "<Leader>h",  ":wincmd h<CR>" }, -- Left
+  { "n", "<Leader>j",  ":wincmd j<CR>" }, -- Down
+  { "n", "<Leader>k",  ":wincmd k<CR>" }, -- Up
+  { "n", "<Leader>l",  ":wincmd l<CR>" }, -- Right
 }
 
 local v_keys = {
   -- Indentation re-select
-  { 'v', '<', '<gv' },
-  { 'v', '>', '>gv' },
+  { "v", "<", "<gv" },
+  { "v", ">", ">gv" },
+
+  -- Move selected lines
+  { "v", "J", ":m '>+1<CR>gv=gv"},
+  { "v", "K", ":m '<-2<CR>gv=gv"},
 }
 
 h.map_keys(n_keys)

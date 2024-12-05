@@ -16,9 +16,9 @@ local cmds = {
 
   -- Add spellcheck for some files
   -- TODO: Figure out how to do setlocal in LUA
-  { 'FileType',     { pattern = { 'gitcommit', 'markdown' }, command = 'setlocal spell' } },
-  { 'FileType',     { pattern = { 'markdown' }, command = 'setlocal textwidth=100' } },
-  { 'FileType',     { pattern = { 'markdown' }, command = 'setlocal formatexpr=' } },
+  { 'FileType',     { pattern = { 'text', 'markdown', 'gitcommit' }, command = 'setlocal spell' } },
+  { 'FileType',     { pattern = { 'text', 'markdown' }, command = 'setlocal textwidth=100' } },
+  { 'FileType',     { pattern = { 'text', 'markdown' }, command = 'setlocal formatexpr=' } },
 
   { 'TextYankPost', { callback = highlightyank } },
 }
