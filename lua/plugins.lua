@@ -97,4 +97,7 @@ lazy.setup({
       'l3mon4d3/luasnip',
     }
   },
+
+  -- Dropbar
+  'Bekaboo/dropbar.nvim'
 })
