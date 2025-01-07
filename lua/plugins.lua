@@ -41,7 +41,13 @@ lazy.setup({
   'moll/vim-bbye',
 
   -- File nav
-  'ThePrimeagen/harpoon',
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = {
+      'nvim-lua/plenary.nvim'
+    },
+  },
 
   -- File explorer
   {

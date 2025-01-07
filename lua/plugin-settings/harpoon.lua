@@ -5,22 +5,11 @@ if not status_ok then
   return
 end
 
-local status_ok, mark = pcall(require, 'harpoon.mark')
-if not status_ok then
-  return
-end
-
-local status_ok, ui = pcall(require, 'harpoon.ui')
-if not status_ok then
-  return
-end
-
-harpoon.setup({
-  tabline = false,
+harpoon:setup({
 })
 
 local keys = {
-  { 'n', '<Leader>fa', mark.add_file },
-  { 'n', '<Leader>fn', ui.toggle_quick_menu },
+  { 'n', '<Leader>ha', function() harpoon:list():add() end },
+  { 'n', '<Leader>hl', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end },
 }
 h.map_keys(keys)
