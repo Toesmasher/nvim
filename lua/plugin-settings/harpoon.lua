@@ -9,7 +9,7 @@ harpoon:setup({
 })
 
 local keys = {
-  { 'n', '<Leader>ha', function() harpoon:list():add() end },
-  { 'n', '<Leader>hl', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end },
+  { 'n', '<Leader>la', function() harpoon:list():add() end },
+  { 'n', '<Leader>ll', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end },
 }
 h.map_keys(keys)
