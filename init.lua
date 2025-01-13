@@ -15,6 +15,7 @@ require('plugin-settings.nvim-notify')
 require('plugin-settings.neo-tree')
 require('plugin-settings.noice')
 require('plugin-settings.telescope')
+require('plugin-settings.tmux')
 require('plugin-settings.treesitter')
 
 require('plugin-settings.lsp.lspconfig')

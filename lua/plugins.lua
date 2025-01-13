@@ -44,9 +44,6 @@ lazy.setup({
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
-    dependencies = {
-      'nvim-lua/plenary.nvim'
-    },
   },
 
   -- File explorer
@@ -105,5 +102,8 @@ lazy.setup({
   },
 
   -- Dropbar
-  'Bekaboo/dropbar.nvim'
+  'Bekaboo/dropbar.nvim',
+
+  -- Tmux integration
+  'alexghergh/nvim-tmux-navigation',
 })

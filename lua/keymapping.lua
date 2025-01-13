@@ -24,11 +24,10 @@ local n_keys = {
   { "n", "<Leader>sv", ":vsplit<CR>" },
   { "n", "<Leader>se", ":wincmd =<CR>" },
 
-  -- Window selection
-  { "n", "<Leader>h",  ":wincmd h<CR>" }, -- Left
-  { "n", "<Leader>j",  ":wincmd j<CR>" }, -- Down
-  { "n", "<Leader>k",  ":wincmd k<CR>" }, -- Up
-  { "n", "<Leader>l",  ":wincmd l<CR>" }, -- Right
+  { "n", "<M-h>", ":vertical:resize -5<CR>" },
+  { "n", "<M-j>", ":resize -5<CR>" },
+  { "n", "<M-k>", ":resize +5<CR>" },
+  { "n", "<M-l>", ":vertical:resize +5<CR>" },
 }
 
 local v_keys = {
