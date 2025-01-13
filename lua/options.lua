@@ -1,15 +1,15 @@
-local h = require('helpers')
+local h = require("helpers")
 
--- Check documentation with ':help <option>', i.e. ':help cmdheight'
+-- Check documentation with ":help <option>", i.e. ":help cmdheight"
 local o = {
   -- Basic look
-  clipboard = 'unnamed,unnamedplus',
+  clipboard = "unnamed,unnamedplus",
   cmdheight = 1,                  -- Height of command window
   conceallevel = 0,               -- Don't conceal syntax stuff
   cursorline = true,              -- Highlight the line with the cursor
-  cursorlineopt = 'both',         -- Highlight line and line number
+  cursorlineopt = "both",         -- Highlight line and line number
   colorcolumn = { 80, 100, 120 }, -- Line length indicators
-  -- gcr = '',                    -- Cursor look override
+  -- gcr = "",                    -- Cursor look override
   hidden = true,                  -- Hide buffers when abandoned
   laststatus = 3,                 -- Use single statusbar (nvim 0.7.0)
   number = true,                  -- Show line numbers
@@ -19,7 +19,7 @@ local o = {
   ruler = true,                   -- Show ruler
   showmode = false,               -- Don't show mode, lualine does that
   showtabline = 2,                -- Always show the tabline
-  signcolumn = 'yes',             -- Add the sign column
+  signcolumn = "yes",             -- Add the sign column
   termguicolors = true,
   title = true,                   -- Set the terminal title
   wrap = true,                    -- Softwrap text
@@ -33,8 +33,8 @@ local o = {
   sidescrolloff = 20,             -- Move left/right 20 columns ahead of cursor
 
   -- Encodings
-  encoding = 'utf-8',
-  fileencoding = 'utf-8',
+  encoding = "utf-8",
+  fileencoding = "utf-8",
 
   -- Split behavior
   splitbelow = true,              -- New horizontal splits below

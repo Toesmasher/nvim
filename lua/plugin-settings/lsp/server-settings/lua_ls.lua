@@ -1,8 +1,8 @@
-local common = require('plugin-settings.lsp.server-settings.common_functions')
+local common = require("plugin-settings.lsp.server-settings.common_functions")
 
 -- Add nvim and plugins
-local libs = vim.api.nvim_get_runtime_file('', true)
-table.insert(libs, vim.fn.expand('$VIMRUNTIME/lua'))
+local libs = vim.api.nvim_get_runtime_file("", true)
+table.insert(libs, vim.fn.expand("$VIMRUNTIME/lua"))
 
 return {
   on_attach = common.default_attach,
@@ -10,11 +10,11 @@ return {
     Lua = {
       runtime = {
         runtime = {
-          version = 'LuaJIT',
+          version = "LuaJIT",
         },
       },
       diagnostics = {
-        globals = { 'vim' },
+        globals = { "vim" },
       },
       workspace = {
         library = libs,

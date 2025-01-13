@@ -1,4 +1,4 @@
-local h = require('helpers')
+local h = require("helpers")
 
 local M = {}
 
@@ -17,23 +17,23 @@ end
 function M.lsp_keybinds()
   local keys = {
     -- LSP Navigation
-    { 'n', '<Leader>nd', vim.lsp.buf.declaration },
-    -- { 'n', '<Leader>ni', vim.lsp.buf.definition },
-    { 'n', '<Leader>no', vim.lsp.buf.implementation },
-    { 'n', '<Leader>nf', vim.lsp.buf.format },
-    { 'n', '<Leader>nb', '<C-o>' },
+    { "n", "<Leader>nd", vim.lsp.buf.declaration },
+    -- { "n", "<Leader>ni", vim.lsp.buf.definition },
+    { "n", "<Leader>no", vim.lsp.buf.implementation },
+    { "n", "<Leader>nf", vim.lsp.buf.format },
+    { "n", "<Leader>nb", "<C-o>" },
 
     -- Diagnostics
-    { 'n', '<Leader>nv', toggle_diagnostics },
+    { "n", "<Leader>nv", toggle_diagnostics },
 
     -- Noice
-    { 'n', '<Leader>nc', vim.lsp.buf.hover },
+    { "n", "<Leader>nc", vim.lsp.buf.hover },
 
     -- LSP Saga
-    { 'n', '<Leader>ni', ':Lspsaga goto_definition<CR>' },
-    { 'n', '<Leader>na', ':Lspsaga code_action<CR>' },
-    { 'n', '<Leader>nx', ':Lspsaga rename<CR>' },
-    { 'n', '<Leader>nr', ':Lspsaga finder<CR>' },
+    { "n", "<Leader>ni", ":Lspsaga goto_definition<CR>" },
+    { "n", "<Leader>na", ":Lspsaga code_action<CR>" },
+    { "n", "<Leader>nx", ":Lspsaga rename<CR>" },
+    { "n", "<Leader>nr", ":Lspsaga finder<CR>" },
   }
   h.map_keys(keys)
 end
@@ -42,7 +42,7 @@ end
 function M.lsp_autocmd()
   local cmds = {
   }
-  h.create_autocmds('ToeLsp', cmds)
+  h.create_autocmds("ToeLsp", cmds)
 end
 
 -- Default attach function

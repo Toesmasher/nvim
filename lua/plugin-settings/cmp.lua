@@ -1,14 +1,14 @@
-local status_ok, cmp = pcall(require, 'cmp')
+local status_ok, cmp = pcall(require, "cmp")
 if not status_ok then
   return
 end
 
-local status_ok2, luasnip = pcall(require, 'luasnip')
+local status_ok2, luasnip = pcall(require, "luasnip")
 if not status_ok2 then
   return
 end
 
-local status_ok3, lspkind = pcall(require, 'lspkind')
+local status_ok3, lspkind = pcall(require, "lspkind")
 if not status_ok3 then
   return
 end
@@ -16,12 +16,12 @@ end
 cmp.setup({
   window = {
     completion = {
-      border = 'rounded',
-      winhighlight = 'Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None'
+      border = "rounded",
+      winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None"
     },
     documentation = {
-      border = 'rounded',
-      winhighlight = 'Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None'
+      border = "rounded",
+      winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None"
     },
   },
 
@@ -36,7 +36,7 @@ cmp.setup({
   preselect = cmp.PreselectMode.None,
 
   mapping = {
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         if #cmp.get_entries() == 1 then
           cmp.confirm({ select = true })
@@ -48,7 +48,7 @@ cmp.setup({
       end
     end, { "i", "s" }),
 
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         if #cmp.get_entries() == 1 then
           cmp.confirm({ select = true })
@@ -62,18 +62,18 @@ cmp.setup({
   },
 
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'path' },
-    -- { name = 'buffer' },
-    { name = 'luasnip' },
+    { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
+    { name = "path" },
+    -- { name = "buffer" },
+    { name = "luasnip" },
   },
 
   formatting = {
     format = lspkind.cmp_format({
-      mode = 'symbol',
+      mode = "symbol",
       maxwidth = 50,
-      ellipsis_char = '...',
+      ellipsis_char = "...",
       before = function(entry, vim_item)
         -- Modify here
         return vim_item
