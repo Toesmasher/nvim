@@ -23,17 +23,13 @@ function M.lsp_keybinds()
     { "n", "<Leader>nf", vim.lsp.buf.format },
     { "n", "<Leader>nb", "<C-o>" },
 
-    -- Diagnostics
-    { "n", "<Leader>nv", toggle_diagnostics },
-
-    -- Noice
+    -- LSP Actions
+    { "n", "<Leader>ni", ":Telescope lsp_definitions<CR>" },
+    { "n", "<Leader>na", vim.lsp.buf.code_action },
+    { "n", "<Leader>nx", vim.lsp.buf.rename },
+    { "n", "<Leader>nr", ":Telescope lsp_references<CR>" },
     { "n", "<Leader>nc", vim.lsp.buf.hover },
-
-    -- LSP Saga
-    { "n", "<Leader>ni", ":Lspsaga goto_definition<CR>" },
-    { "n", "<Leader>na", ":Lspsaga code_action<CR>" },
-    { "n", "<Leader>nx", ":Lspsaga rename<CR>" },
-    { "n", "<Leader>nr", ":Lspsaga finder<CR>" },
+    { "n", "<Leader>nv", toggle_diagnostics },
   }
   h.map_keys(keys)
 end

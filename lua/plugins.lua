@@ -37,10 +37,7 @@ lazy.setup({
   -- Notifications
   "rcarriga/nvim-notify",
 
-  -- Buffer closer
-  "moll/vim-bbye",
-
-  -- File nav
+  -- Project quicknav
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -59,6 +56,9 @@ lazy.setup({
 
   --Telescope
   "nvim-telescope/telescope.nvim",
+
+  -- UI Core hooks replacement
+  "stevearc/dressing.nvim",
 
   -- GIT handler
   "lewis6991/gitsigns.nvim",
@@ -83,7 +83,6 @@ lazy.setup({
 
   --LSP
   "neovim/nvim-lspconfig",           -- Easier LSP config
-  "nvimdev/lspsaga.nvim",
   "onsails/lspkind.nvim",            -- LSP icons
   "nvimtools/none-ls.nvim",
 

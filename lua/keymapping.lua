@@ -13,7 +13,7 @@ local n_keys = {
 
   -- No prefix bindings
   -- Buffer handling
-  { "n", "<Leader>c",  ":Bdelete<CR>" },
+  { "n", "<Leader>c",  ":bd<CR>" },
   { "n", "<Tab>",      ":bnext<CR>" },
   { "n", "<S-Tab>",    ":bprevious<CR>" },
 

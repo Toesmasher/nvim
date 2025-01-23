@@ -12,7 +12,5 @@ local keys = {
   { "n", "<Leader>tg", ":Telescope live_grep<CR>" },
   { "n", "<Leader>tf", ":Telescope git_files<CR>" },
   { "n", "<Leader>tF", ":Telescope find_files<CR>" },
-  { "n", "<Leader>tb", ":Telescope git_branches<CR>" },
-  { "n", "<Leader>tp", ":Telescope projects<CR>" }
 }
 h.map_keys(keys)
