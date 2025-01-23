@@ -34,8 +34,12 @@ lazy.setup({
   -- Main UI
   "folke/noice.nvim",
 
+  -- Quickfix UI
+  "stevearc/quicker.nvim",
+
   -- Notifications
   "rcarriga/nvim-notify",
+
 
   -- Project quicknav
   {

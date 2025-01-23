@@ -18,6 +18,7 @@ require('plugin-settings.noice')
 require('plugin-settings.telescope')
 require('plugin-settings.tmux')
 require('plugin-settings.treesitter')
+require('plugin-settings.quicker')
 
 require('plugin-settings.lsp.lspconfig')
 

@@ -28,6 +28,10 @@ local n_keys = {
   { "n", "<M-j>", ":resize -5<CR>" },
   { "n", "<M-k>", ":resize +5<CR>" },
   { "n", "<M-l>", ":vertical:resize +5<CR>" },
+
+  -- Quickfix list
+  { "n", "<Leader>cn", ":cnext<CR>" },
+  { "n", "<Leader>cp", ":cprevious<CR>" },
 }
 
 local v_keys = {
