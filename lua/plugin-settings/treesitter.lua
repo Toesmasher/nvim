@@ -62,6 +62,8 @@ tsconfig.setup({
         ["ac"] = "@conditional.outer",
         ["il"] = "@loop.inner",
         ["al"] = "@loop.outer",
+        ["ia"] = "@parameter.inner",
+        ["aa"] = "@parameter.outer",
       }
     },
   }
