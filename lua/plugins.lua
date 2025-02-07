@@ -73,8 +73,8 @@ lazy.setup({
   -- Code commentator
   "numToStr/Comment.nvim",
 
-  -- Preview markdown with glow
-  "ellisonleao/glow.nvim",
+  -- Markdown render
+  "MeanderingProgrammer/render-markdown.nvim",
 
   -- Treesitter
   {
