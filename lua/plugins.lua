@@ -48,21 +48,13 @@ lazy.setup({
   },
 
   -- File explorer
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-      "muniftanjim/nui.nvim"
-    }
-  },
+  { "mikavilpas/yazi.nvim" },
 
   -- Lualine for status and bufferlines
   "nvim-lualine/lualine.nvim",
 
   --Telescope
   "nvim-telescope/telescope.nvim",
-
-  -- UI Core hooks replacement
-  "stevearc/dressing.nvim",
 
   -- GIT handler
   "lewis6991/gitsigns.nvim",
