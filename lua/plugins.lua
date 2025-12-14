@@ -11,7 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 local h = require("helpers")
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
@@ -25,7 +24,7 @@ lazy.setup({
   "nvim-lua/plenary.nvim",
   "kyazdani42/nvim-web-devicons",
 
-  -- Colorschemes
+  -- Colorscheme
   {
     "catppuccin/nvim",
     name = "catppucin"
@@ -33,19 +32,18 @@ lazy.setup({
 
   -- Main UI
   "folke/noice.nvim",
+  { 
+    "folke/which-key.nvim",
+    dependencies = {
+        "echasnovski/mini.icons"
+    }
+  },
 
-  -- Quickfix UI
-  "stevearc/quicker.nvim",
+  -- Tmux integration
+  "alexghergh/nvim-tmux-navigation",
 
   -- Notifications
   "rcarriga/nvim-notify",
-
-
-  -- Project quicknav
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-  },
 
   -- File explorer
   { "mikavilpas/yazi.nvim" },
@@ -98,7 +96,4 @@ lazy.setup({
 
   -- Dropbar
   "Bekaboo/dropbar.nvim",
-
-  -- Tmux integration
-  "alexghergh/nvim-tmux-navigation",
 })
