@@ -1,9 +1,5 @@
 local common = require("plugin-settings.lsp.server-settings.common_functions")
-
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-  return
-end
+local lspconfig = vim.lsp.config
 
 require("plugin-settings.lsp.server-settings.none-ls")
 
@@ -25,5 +21,6 @@ for _, server in ipairs(servers) do
     cfg = default_setup
   end
 
-  lspconfig[server].setup(cfg)
+  vim.lsp.enable(server)
+  vim.lsp.config(server, cfg)
 end

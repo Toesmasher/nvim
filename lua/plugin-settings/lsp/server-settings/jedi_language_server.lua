@@ -1,4 +1,4 @@
-local util = require("lspconfig.util")
+local util = vim.lsp.lspconfig.util
 local common = require("plugin-settings.lsp.server-settings.common_functions")
 
 return {
