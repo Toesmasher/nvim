@@ -1,73 +1,72 @@
-local status_ok, tsconfig = pcall(require, "nvim-treesitter.configs")
+local status_ok, ts = pcall(require, "nvim-treesitter")
 if not status_ok then
   return
 end
 
-tsconfig.setup({
-  auto_install = false,
-  sync_install = false,
-  -- ensure_installed = "maintained",
+ts.setup({
 
-  ensure_installed = {
-    "bash",
-    "c",
-    "cpp",
-    "css",
-    "dockerfile",
-    "html",
-    "http",
-    "java",
-    "javascript",
-    "json",
-    "json5",
-    -- "latex",
-    "llvm",
-    "lua",
-    "make",
-    "markdown",
-    "markdown_inline",
-    "python",
-    "regex",
-    "rust",
-    "vim",
-    "yaml",
-    "zig"
-  },
+})
 
-  ignore_install = {},
-  highlight = { enable = true },
-  indent = { enable = false },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "<Leader>t",
-      node_incremental = "n",
-      node_decremental = "N",
-      scope_incremental = "s",
-    }
-  },
+ts.install({
+  "bash",
+  "c",
+  "cpp",
+  "css",
+  "dockerfile",
+  "html",
+  "http",
+  "java",
+  "javascript",
+  "json",
+  "json5",
+  "llvm",
+  "lua",
+  "make",
+  "markdown",
+  "markdown_inline",
+  "python",
+  "regex",
+  "rust",
+  "vim",
+  "yaml",
+  "zig"
+})
 
-  -- nvim-treesitter-textobjects specific stuff
-  textobjects = {
-    select = {
-      enable = true,
-      -- Automatically jump forward to textobj
-      lookahead = true,
-      keymaps = {
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ib"] = "@block.inner",
-        ["ab"] = "@block.outer",
-        ["ic"] = "@conditional.inner",
-        ["ac"] = "@conditional.outer",
-        ["il"] = "@loop.inner",
-        ["al"] = "@loop.outer",
-        ["ia"] = "@parameter.inner",
-        ["aa"] = "@parameter.outer",
-      }
-    },
+-- Textobjects
+local status_ok, tsto = pcall(require, "nvim-treesitter-textobjects")
+if not status_ok then
+  return
+end
+
+local h = require("helpers")
+local status_ok, tstosel = pcall(require, "nvim-treesitter-textobjects.select")
+if not status_ok then
+  return
+end
+
+tsto.setup({
+  select = {
+    lookahead = true,
+    include_surrounding_whitespace = false
   }
 })
+
+h.map_keys({
+  {{ "x", "o" }, "af", function() tstosel.select_textobject("@function.outer", "textobjects") end },
+  {{ "x", "o" }, "if", function() tstosel.select_textobject("@function.inner", "textobjects") end },
+
+  {{ "x", "o" }, "al", function() tstosel.select_textobject("@loop.outer", "textobjects") end },
+  {{ "x", "o" }, "il", function() tstosel.select_textobject("@loop.inner", "textobjects") end },
+
+  {{ "x", "o" }, "ib", function() tstosel.select_textobject("@block.outer", "textobjects") end },
+  {{ "x", "o" }, "ib", function() tstosel.select_textobject("@block.inner", "textobjects") end },
+
+  {{ "x", "o" }, "ac", function() tstosel.select_textobject("@conditional.outer", "textobjects") end },
+  {{ "x", "o" }, "ic", function() tstosel.select_textobject("@conditional.inner", "textobjects") end },
+})
+
+print("pie")
+
 
 --local h = require("helpers")
 --local o = {

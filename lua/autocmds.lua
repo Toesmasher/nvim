@@ -8,9 +8,6 @@ local function highlightyank()
 end
 
 local cmds = {
-  -- Reload config files on write
-  { "BufWritePost", { pattern = "*/nvim/*.lua", command = "source <afile>" } },
-
   -- Resize windows on terminal resize
   { "VimResized",   { command = "wincmd =" } },
 

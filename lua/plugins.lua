@@ -72,6 +72,7 @@ lazy.setup({
     build = { ":TSUpdate" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
+      branch = "main"
     },
   },
 

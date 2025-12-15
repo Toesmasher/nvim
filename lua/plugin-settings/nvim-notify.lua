@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 nvim_notify.setup({
-  background_colour = "FloatShadow",
+  background_colour = "#000000",
   render = "minimal",
 })
 
