@@ -13,15 +13,12 @@ local n_keys = {
 
   -- No prefix bindings
   -- Buffer handling
-  { "n", "<Leader>c",  ":bd<CR>" },
   { "n", "<Tab>",      ":bnext<CR>" },
   { "n", "<S-Tab>",    ":bprevious<CR>" },
 
   -- Prefixed bindings
   -- Splitting, Prefix: <Leader>s
   { "",  "s",          "<nop>" },
-  { "n", "<Leader>ss", ":split<CR>" },
-  { "n", "<Leader>sv", ":vsplit<CR>" },
   { "n", "<Leader>se", ":wincmd =<CR>" },
 
   { "n", "<M-h>", ":vertical:resize -5<CR>" },

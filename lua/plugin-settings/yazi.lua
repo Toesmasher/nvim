@@ -11,7 +11,17 @@ yazi.setup({
 })
 
 local keys = {
-  { "n", "<Leader>f", function() yazi.toggle() end },
+  { "n", "<Leader>ff", function() yazi.toggle() end },
 }
 
 h.map_keys(keys)
+
+local status_ok, wk = pcall(require, "which-key")
+if not status_ok then
+  return
+end
+
+wk.add({
+  { "<leader>f", group = "File operations" },
+  { "<leader>ff", desc = "Yazi" },
+})

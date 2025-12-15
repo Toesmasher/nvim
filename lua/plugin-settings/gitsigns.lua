@@ -15,7 +15,22 @@ local keys = {
   { "n", "<Leader>gd", ":Gitsigns preview_hunk<CR>" },
   { "n", "<Leader>gD", ":Gitsigns diffthis<CR>", },
   { "n", "<Leader>gn", ":Gitsigns next_hunk<CR>" },
-  { "n", "<Leader>gN", ":Gitsigns prev_hunk<CR>" },
+  { "n", "<Leader>gp", ":Gitsigns prev_hunk<CR>" },
   { "n", "<Leader>gr", ":Gitsigns reset_hunk<CR>" },
 }
 h.map_keys(keys)
+
+local status_ok, wk = pcall(require, "which-key")
+if not status_ok then
+  return
+end
+
+wk.add({
+  { "<leader>g", group = "Git" },
+  { "<leader>gh", desc = "Toggle line highlight" },
+  { "<leader>gd", desc = "Preview hunk" },
+  { "<leader>gD", desc = "Side-by-side diff" },
+  { "<leader>gn", desc = "Go to next hunk" },
+  { "<leader>gp", desc = "Go to prev hunk" },
+  { "<leader>gr", desc = "Reset hunk" },
+})

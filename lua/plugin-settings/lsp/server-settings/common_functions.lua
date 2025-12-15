@@ -17,21 +17,39 @@ end
 function M.lsp_keybinds()
   local keys = {
     -- LSP Navigation
-    { "n", "<Leader>nd", vim.lsp.buf.declaration },
+    { "n", "<Leader>ld", vim.lsp.buf.declaration },
     -- { "n", "<Leader>ni", vim.lsp.buf.definition },
-    { "n", "<Leader>no", vim.lsp.buf.implementation },
-    { "n", "<Leader>nf", vim.lsp.buf.format },
-    { "n", "<Leader>nb", "<C-o>" },
+    { "n", "<Leader>lo", vim.lsp.buf.implementation },
+    { "n", "<Leader>lf", vim.lsp.buf.format },
 
     -- LSP Actions
-    { "n", "<Leader>ni", ":Telescope lsp_definitions<CR>" },
-    { "n", "<Leader>na", vim.lsp.buf.code_action },
-    { "n", "<Leader>nx", vim.lsp.buf.rename },
-    { "n", "<Leader>nr", ":Telescope lsp_references<CR>" },
-    { "n", "<Leader>nc", vim.lsp.buf.hover },
-    { "n", "<Leader>nv", toggle_diagnostics },
+    { "n", "<Leader>li", ":Telescope lsp_definitions<CR>" },
+    { "n", "<Leader>la", vim.lsp.buf.code_action },
+    { "n", "<Leader>lx", vim.lsp.buf.rename },
+    { "n", "<Leader>lr", ":Telescope lsp_references<CR>" },
+    { "n", "<Leader>lc", vim.lsp.buf.hover },
+    { "n", "<Leader>lv", toggle_diagnostics },
   }
   h.map_keys(keys)
+
+  local status_ok, wk = pcall(require, "which-key")
+  if not status_ok then
+    return
+  end
+
+  wk.add({
+    { "<leader>l", group = "LSP" },
+    { "<leader>ld", desc = "Goto declaration" },
+    { "<leader>lo", desc = "Goto implementation" },
+    { "<leader>lf", desc = "Format" },
+
+    { "<leader>li", desc = "List definitions" },
+    { "<leader>la", desc = "Code action" },
+    { "<leader>lx", desc = "Rename" },
+    { "<leader>lr", desc = "References" },
+    { "<leader>lc", desc = "Hover" },
+    { "<leader>lv", desc = "Toggle diagnostics" },
+  })
 end
 
 -- Default AutoCMDs

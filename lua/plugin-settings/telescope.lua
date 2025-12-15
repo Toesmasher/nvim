@@ -14,3 +14,16 @@ local keys = {
   { "n", "<Leader>tF", ":Telescope find_files<CR>" },
 }
 h.map_keys(keys)
+
+local status_ok, wk = pcall(require, "which-key")
+if not status_ok then
+  return
+end
+
+wk.add({
+  { "<leader>t", group = "Telescope" },
+  { "<leader>tt", desc = "Main" },
+  { "<leader>tg", desc = "Live grep" },
+  { "<leader>tf", desc = "Preview hunk" },
+  { "<leader>tF", desc = "Side-by-side diff" },
+})
