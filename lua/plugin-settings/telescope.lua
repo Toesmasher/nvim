@@ -7,11 +7,14 @@ t.setup({
 })
 
 local h = require("helpers")
+local picker_opts = require("telescope.themes").get_ivy({ winblend = 30 })
+local builtin = require("telescope.builtin")
+
 local keys = {
-  { "n", "<Leader>tt", ":Telescope<CR>" },
-  { "n", "<Leader>tg", ":Telescope live_grep<CR>" },
-  { "n", "<Leader>tf", ":Telescope git_files<CR>" },
-  { "n", "<Leader>tF", ":Telescope find_files<CR>" },
+  { "n", "<Leader>tb", function() builtin.buffers(picker_opts) end },
+  { "n", "<Leader>tg", function() builtin.live_grep(picker_opts) end },
+  { "n", "<Leader>tf", function() builtin.git_files(picker_opts) end },
+  { "n", "<Leader>tF", function() builtin.find_files(picker_opts) end },
 }
 h.map_keys(keys)
 
@@ -22,7 +25,7 @@ end
 
 wk.add({
   { "<leader>t", group = "Telescope" },
-  { "<leader>tt", desc = "Main" },
+  { "<leader>tb", desc = "Buffers" },
   { "<leader>tg", desc = "Live grep" },
   { "<leader>tf", desc = "Preview hunk" },
   { "<leader>tF", desc = "Side-by-side diff" },
