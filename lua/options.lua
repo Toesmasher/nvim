@@ -43,20 +43,24 @@ local o = {
   -- Tab stuff
   expandtab = true,               -- Replace tab with spaces
   shiftwidth = 2,                 -- Indentation width
-  smartindent = true,
+  smartindent = false,
   tabstop = 2,                    -- Spaces per tab
 
   -- Searching
   hlsearch = true,                -- Highlight search
   ignorecase = true,              -- Ignore case when searching
-  incsearch = false,               -- Incremental search
+  incsearch = false,              -- Incremental search
   smartcase = true,               -- Don't ignore case when search term includes case
 
   -- Swap and backup stuff
   autoread = true,                -- Automatically reload changed files
   backup = false,                 -- No backup files
   swapfile = false,               -- No swap files
-  writebackup = false             -- No write-backup
+  writebackup = false,            -- No write-backup
+
+  -- Coding specific
+  showmatch = true,               -- Show matching parenthesises
+  matchpairs = "(:),{:},[:],<:>",
 }
 
 h.set_options(o)

@@ -19,7 +19,6 @@ local branch = {
 local function recording()
   local reg = vim.fn.reg_recording()
   if reg ~= "" then
-    print(reg)
     return "Recording @" .. reg
   end
 

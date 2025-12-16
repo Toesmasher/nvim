@@ -8,7 +8,7 @@ h.set_globals(g)
 
 -- Modes: "n"ormal, "i"nsert, "v"isual, "x"visual_block, "t"erm, "c"ommand
 local n_keys = {
-  -- Set space as leader
+    -- Set space as leader
   { "",  "<Space>",    "<Nop>" },
 
   -- No prefix bindings
@@ -25,6 +25,9 @@ local n_keys = {
   { "n", "<M-j>", ":resize -5<CR>" },
   { "n", "<M-k>", ":resize +5<CR>" },
   { "n", "<M-l>", ":vertical:resize +5<CR>" },
+
+  -- Close buffers without losing layout
+  { "", "<Leader>bd", ":bp|bd #<CR>" },
 
   -- Quickfix list
   { "n", "<Leader>cn", ":cnext<CR>" },

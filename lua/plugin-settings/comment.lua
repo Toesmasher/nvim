@@ -13,12 +13,12 @@ comment.setup({
     extended = false,
   },
   toggler = {
-    line = "<Leader>cc",
-    block = "<Leader>cdonotbind",
+    line = "<Leader>c",
+    block = "<Leader>xxx",
   },
   opleader = {
-    line = "<Leader>cdonotbind",
-    block = "<Leader>cb",
+    line = "<Leader>xxx",
+    block = "<Leader>c",
   }
 })
 
@@ -29,6 +29,4 @@ end
 
 wk.add({
   { "<leader>c", group = "Comment" },
-  { "<leader>cc", desc = "Comment line" },
-  { "<leader>cb", desc = "Comment block" },
 })
