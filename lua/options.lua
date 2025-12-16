@@ -49,7 +49,7 @@ local o = {
   -- Searching
   hlsearch = true,                -- Highlight search
   ignorecase = true,              -- Ignore case when searching
-  incsearch = true,               -- Incremental search
+  incsearch = false,               -- Incremental search
   smartcase = true,               -- Don't ignore case when search term includes case
 
   -- Swap and backup stuff
