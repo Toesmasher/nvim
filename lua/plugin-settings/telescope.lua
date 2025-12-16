@@ -7,7 +7,7 @@ t.setup({
 })
 
 local h = require("helpers")
-local picker_opts = require("telescope.themes").get_ivy({ winblend = 30 })
+local picker_opts = require("telescope.themes").get_ivy({ winblend = 15 })
 local builtin = require("telescope.builtin")
 
 local keys = {
