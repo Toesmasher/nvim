@@ -11,6 +11,8 @@ yazi.setup({
 })
 
 local keys = {
+  { "n", "<Leader>fb", function() yazi.yazi() end },
+  { "n", "<Leader>fc", function() yazi.yazi(nil, vim.fn.getcwd()) end },
   { "n", "<Leader>ff", function() yazi.toggle() end },
 }
 
@@ -23,5 +25,7 @@ end
 
 wk.add({
   { "<leader>f", group = "File operations" },
-  { "<leader>ff", desc = "Yazi" },
+  { "<leader>fb", desc = "Yazi @ buffer" },
+  { "<leader>fc", desc = "Yazi @ CWD" },
+  { "<leader>ff", desc = "Yazi toggle" },
 })
