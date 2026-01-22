@@ -11,6 +11,10 @@ local n_keys = {
     -- Set space as leader
   { "",  "<Space>",    "<Nop>" },
 
+  -- Helix-like movement
+  { {"n", "v"}, "gh", "^" },
+  { {"n", "v"}, "gl", "$" },
+
   -- No prefix bindings
   -- Buffer handling
   { "n", "<Tab>",      ":bnext<CR>" },
