@@ -20,11 +20,7 @@ local n_keys = {
   { "n", "<Tab>",      ":bnext<CR>" },
   { "n", "<S-Tab>",    ":bprevious<CR>" },
 
-  -- Prefixed bindings
-  -- Splitting, Prefix: <Leader>s
-  { "",  "s",          "<nop>" },
-  { "n", "<Leader>se", ":wincmd =<CR>" },
-
+  -- Pane handling
   { "n", "<M-h>", ":vertical:resize -5<CR>" },
   { "n", "<M-j>", ":resize -5<CR>" },
   { "n", "<M-k>", ":resize +5<CR>" },
@@ -34,8 +30,11 @@ local n_keys = {
   { "", "<Leader>bd", ":bp|bd #<CR>" },
 
   -- Quickfix list
-  { "n", "<Leader>cn", ":cnext<CR>" },
-  { "n", "<Leader>cp", ":cprevious<CR>" },
+  { "n", "<Leader>qn", ":cnext<CR>" },
+  { "n", "<Leader>qp", ":cprevious<CR>" },
+
+  -- Jumps
+  { "n", "<Leader>jb", "<C-O>" },
 }
 
 local v_keys = {
@@ -50,3 +49,23 @@ local v_keys = {
 
 h.map_keys(n_keys)
 h.map_keys(v_keys)
+
+local status_ok, wk = pcall(require, "which-key")
+if not status_ok then
+  return
+end
+
+wk.add({
+  { "gh", desc = "Start of line" },
+  { "gl", desc = "End of line" },
+
+  { "<Leader>b", group = "Buffers" },
+  { "<Leader>bd", desc = "Close buffer" },
+
+  { "<Leader>q", group = "Quickfix" },
+  { "<Leader>qn", desc = "Next" },
+  { "<Leader>qp", desc = "Previous" },
+
+  { "<Leader>j", group = "Jumps" },
+  { "<Leader>jb", desc = "Back" },
+})
