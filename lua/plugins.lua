@@ -75,7 +75,6 @@ lazy.setup({
   --LSP
   "neovim/nvim-lspconfig",           -- Easier LSP config
   "onsails/lspkind.nvim",            -- LSP icons
-  "nvimtools/none-ls.nvim",
 
   -- Autocomplete with LSP and luasnip
   {

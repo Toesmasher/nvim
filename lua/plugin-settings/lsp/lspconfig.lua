@@ -1,14 +1,11 @@
 local common = require("plugin-settings.lsp.server-settings.common_functions")
-local lspconfig = vim.lsp.config
-
-require("plugin-settings.lsp.server-settings.none-ls")
 
 local servers = {
   "clangd",               -- C/C++
   "jdtls",                -- Java
   "jedi_language_server", -- Python
   "rust_analyzer",        -- Rust
-  "lua_ls"                -- LUA
+  "lua_ls",               -- LUA
 }
 
 local default_setup = {
