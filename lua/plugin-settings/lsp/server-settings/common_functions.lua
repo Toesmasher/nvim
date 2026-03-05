@@ -6,7 +6,7 @@ local diag_vtext = false
 local function toggle_diagnostics()
   diag_vtext = not diag_vtext
   vim.diagnostic.config({
-    virtual_text = diag_vtext,
+    virtual_lines = diag_vtext,
     underline = true,
     severity_sort = true,
     update_in_insert = false,
