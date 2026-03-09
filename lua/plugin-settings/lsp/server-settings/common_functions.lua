@@ -2,11 +2,25 @@ local h = require("helpers")
 
 local M = {}
 
-local diag_vtext = false
+local DIAG_TYPES = {
+  NONE = { vtext=false, vlines=false },
+  VTEXT = { vtext=true, vlines=false },
+  VLINES = { vtext=false, vlines=true },
+}
+local diag_type = DIAG_TYPES.NONE
+
 local function toggle_diagnostics()
-  diag_vtext = not diag_vtext
+  if diag_type == DIAG_TYPES.NONE then
+    diag_type = DIAG_TYPES.VTEXT
+  elseif diag_type == DIAG_TYPES.VTEXT then
+    diag_type = DIAG_TYPES.VLINES
+  else
+    diag_type = DIAG_TYPES.NONE
+  end
+
   vim.diagnostic.config({
-    virtual_lines = diag_vtext,
+    virtual_lines = diag_type.vlines,
+    virtual_text = diag_type.vtext,
     underline = true,
     severity_sort = true,
     update_in_insert = false,
