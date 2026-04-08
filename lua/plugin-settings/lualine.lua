@@ -36,7 +36,7 @@ lualine.setup({
       right = ""
     },
     icons_enabled = true,
-    theme = "catppuccin",
+    -- theme = "catppuccin",
     always_divide_middle = true,
     globalstatus = true,
     refresh = {
