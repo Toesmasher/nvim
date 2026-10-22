@@ -6,8 +6,16 @@ end
 gs.setup({
   attach_to_untracked          = true,
   current_line_blame           = true,
+  current_line_blame_opts      = {
+    virt_text_pos = 'right_align'
+  },
   current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary> - <abbrev_sha>",
 })
+
+-- Brigther blame text
+vim.defer_fn(function()
+  vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#cad3f5" })
+end, 500)
 
 local h = require("helpers")
 local keys = {
