@@ -92,4 +92,7 @@ lazy.setup({
 
   -- Dropbar
   "Bekaboo/dropbar.nvim",
+
+  -- LLM
+  "david-kunz/gen.nvim",
 })
